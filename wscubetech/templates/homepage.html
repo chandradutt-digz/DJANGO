@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <link rel="stylesheet" href="/static/css/style.css"/>
+        <!-- Awsome Font Link -->
+        <script src="https://kit.fontawesome.com/085a2010e9.js" crossorigin="anonymous"></script>
+        <!--    JS script-->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"/>
+        <!-- Bootstrap Font Icon CSS -->
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+              rel="stylesheet"
+              integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+              crossorigin="anonymous">
+        {% comment %} <link rel="stylesheet" href="website.css"/> {% endcomment %}
+    </head>
+    <body>
+        <link rel="stylesheet" href="/static/css/style.css"/>
+        {% include "header.html" %}
+        <marquee id='cssmarquee' onmouseover='stop()' onmouseout='start()'>
+            {% for news in newsdata %}<a href='/newsdetail/{{ news.news_slug }}'>{{ news.news_title }} &nbsp &nbsp &nbsp </a>{% endfor %}
+        </marquee>
+        <hr>
+        <br>
+        {% load static %}
+        <h1>Hello Chandradutt welcome to Home Page</h1>
+        {% for element in list %}
+            <div>{{ element }}</div>
+            <div>
+            {% endfor %}
+            <br>
+            {% comment %} <table border="1" cellpadding="10">
+            <tr>
+                <th>Name</th>
+                <th>Roll No</th>
+            </tr>
+            {% for d in student_details %}
+            <tr>
+                <td>{{d.name}}</td>
+                <td>{{d.phone}}</td>
+            </tr>
+            {% endfor %}
+            </table> {% endcomment %}
+            <br>
+            {% if numbers|length > 0 %}
+                {% for n in numbers %}
+                    {% if n > 5 %}{{n }}{% endif %}
+                {% endfor %}
+            {% elif numbers|length > 5 %}
+                {% for n in numbers %}{{n }}{% endfor %}
+                asldkjfasl;dkfja;sdlfkj
+                {% comment %} No numbers found {% endcomment %}
+            {% endif %}
+            <div class='row' id='ppp'>
+                <div class='col-12'>
+                    <form method='get'>
+                            Search item - 
+                            <input type='text' name='servicename' value=''/>
+                            <input type='submit' value='Search' id='btn'/>
+                            {% comment %} <input name="submit"
+        id=""
+        class="btn btn-primary btn-center"
+        type="button"
+        value="submit"/> {% endcomment %}
+                    </form>
+                </div>
+                {% comment %} {{ servicedata }} {% endcomment %}
+                {% for i in servicedata %}
+                    {% comment %} <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="card-subtitle">{{ i.service_icon }}</h3>
+                <h5 class="card-title">{{ i.service_title }}</h5>
+                <p class="card-text">{{ i.service_des }}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+                    </div> {% endcomment %}
+                    <div class='col-md-3 container pd-2' id='imgbox'>
+                        <div class="card text-center" style="width: 18rem; height: 300px;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ i.service_title }}</h5>
+                                <span class="{{ i.service_icon }} fa-2x"></span>
+                                {% comment %} <h6 class="card-subtitle mb-2 text-muted ">{{ i.service_icon }}</h6> {% endcomment %}
+                                <p class="card-text">{{ i.service_des | pprint }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% comment %} {% empty %}
+                        <p>No record found</p> {% endcomment %}
+                {% endfor %}
+                
+            </div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    {% if servicedata.has_previous %}
+                  <li class="page-item"><a class="page-link" href="/?page=1">First</a></li>
+                  <li class="page-item"><a class="page-link" href="/?page={{servicedata.previous_page_number}}">Previous</a></li>
+                  {% endif %}
+                  {% for n in totalpagelist %}
+                  <li class="page-item"><a class="page-link" href="/?page={{n}}">{{n}}</a></li>
+                  {% endfor %}
+                  
+                  {% if servicedata.has_next %}
+                  <li class="page-item"><a class="page-link" href="/?page={{servicedata.next_page_number}}">Next</a></li>
+                  <li class="page-item"><a class="page-link" href="/?page={{lastpage}}">Last</a></li>
+                  {% endif %}
+                </ul>
+              </nav>
+            {% comment %} <div class='col-lg-4 col-md-6'>
+                {{ i.service_icon }}
+                {{ i.service_title }}
+                {{ i.service_des }}
+            </div> {% endcomment %}
+        </body>
+        <br>
+        <br>
+        {% include "footer.html" %}
+    </html>

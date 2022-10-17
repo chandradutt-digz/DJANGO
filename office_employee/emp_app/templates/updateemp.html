@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Update Employee Details</title>
+    </head>
+    <body>
+        <form meta="POST" action="/allemp/" id='uemp' onsubmit="return confirm('Are you sure you want to update this employee?')"> 
+            {% csrf_token %}
+            <h3>change value of employee</h3>
+            <label class="col-sm-2 col-form-label">Employee Id:</label>
+            <div class="col-sm-4">
+                <input type="text"
+                    name="eid"
+                    id="id_eid"
+                    required
+                    maxlength="20"
+                    value="{{ employee.id }}"/>
+            </div>
+            <label class="col-sm-2 col-form-label">Employee Name:</label>
+            <div class="col-sm-4">
+                <input type="text"
+                    name="fname"
+                    id="id_ename"
+                    required
+                    maxlength="100"
+                    value="{{ employee.fname }}"/>
+            </div>
+            <label class="col-sm-2 col-form-label">Employee Name:</label>
+            <div class="col-sm-4">
+                <input type="text"
+                    name="lname"
+                    id="id_ename"
+                    required
+                    maxlength="100"
+                    value="{{ employee.lname }}"/>
+            </div>
+            <div class="mb-3">
+                <label for="dept" class="form-label">Department</label>
+                <div class="dropdown">
+                    <select class="btn btn-primary dropdown-toggle"
+                            name='dept'
+                            type="button"
+                            id="dept"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="true">
+                      Select Department
+                        {% for d in item %}
+                          <option value='{{ d.id }}'>{{ d.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                {% comment %} <input type="number"
+                    class="form-control"
+                    name='dept'
+                    value='{{ name }}'
+                    id="dept"> {% endcomment %}
+            </div>
+            <div class="mb-3">
+                <label for="salary" class="form-label">salary</label>
+                <input type="number"
+                    class="form-control"
+                    name='salary'
+                    value='{{ salary }}'
+                    id="salary">
+            </div>
+            <div class="mb-3">
+                <label for="bonus" class="form-label">Bonus</label>
+                <input type="number"
+                    class="form-control"
+                    name='bonus'
+                    value='{{ bonus }}'
+                    id="bonus">
+            </div>
+            <div class="mb-3">
+                <label for="role" class="form-label">Role</label>
+                <input type="number"
+                    class="form-control"
+                    name='role'
+                    value='{{ role }}'
+                    id="role">
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="number"
+                    class="form-control"
+                    name='phone'
+                    value='{{ phone }}'
+                    required
+                    maxlength="10"
+                    id="phone">
+            </div>
+            <button type="submit" id='submit' class="btn btn-primary">Update</button>
+        </form>
+    </body>
+</html>

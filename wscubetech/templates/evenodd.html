@@ -1,0 +1,54 @@
+{% include 'header.html' %}
+{% load static %}
+
+
+<div class='container'>
+    <div class='row d-flex justify-content-center'>
+        <div class="title text-center">
+            <h1 class='mb-10'>
+                Odd Even Checker
+            </h1>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-12'>
+            <form method='POST'>
+                {% csrf_token %}
+                    {% comment %} {{form}} {% endcomment %}
+                {% if error %}
+                <div class='alert alert-danger' role='alert'>
+                    Error: Invalid Input
+                </div>
+                {% endif %}
+                <div class='pt-2'>
+                    <label>Value 1</label>
+                    <input type='text' name='num1' class='form-control'/>
+                </div><br>
+                <div class='pt-2'>
+                    <button type='submit'>Save</button>
+                    {% comment %} <input name="submit" id="" class="btn btn-primary btn-center" type="button" value="submit"/> {% endcomment %}
+                </div><br>
+                output
+                <input type='text' value='{{res}}'/>
+            </form>
+        </div>
+    </div>
+</div>
+{% comment %} <form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form> {% endcomment %}
+
+  {% include 'footer.html' %}

@@ -1,0 +1,79 @@
+h1{
+    background-color: green;
+}
+#btn:hover{
+    text-shadow: 1px 1px;
+    box-shadow: 1px 1px;
+    border-color: cyan;
+    /* background-color: yellow; */
+}
+
+body {
+    font-family: Arial, Helvetica, Sans-Serif;
+    font-size: 85%;
+    height: 900px;
+    margin: 0px auto 0px auto;
+    padding: 10px;
+    border: 2px;
+    background-color: green;
+    }
+
+.ppp{
+    margin: 5px;
+}
+
+/* .abc{
+    background-color: brown;
+} */
+
+#lala{
+    color: tomato;
+}
+
+.footercss{
+    text-align: center;
+    background-color: aquamarine;
+}
+
+#active:hover{
+    box-shadow: 2px inset;
+}
+#cssmarquee {
+    background-color: brown;
+}
+/* #cssmarquee {
+    width: 100%;
+    height: 50px;
+    color: blueviolet;
+    background-color: turquoise;
+} */
+
+#imgbox:hover {
+    box-shadow: 0 0 2px 1px purple;
+    /* background-position: 1px 1px 1px 1px; */
+    
+}
+
+/* #cssmarquee {
+    font-size: 2em;
+    background-color: rgb(0, 255, 170);
+    color: turquoise;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;    
+    transform:translateX(100%);
+    animation: cssmarquee 10s linear infinite;
+   }
+
+   @keyframes cssmarquee {
+    0%   { 
+    transform: translateX(100%);       
+    }
+    100% { 
+     
+    transform: translateX(-100%); 
+    }
+   } */

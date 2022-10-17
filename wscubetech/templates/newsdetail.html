@@ -1,0 +1,20 @@
+<div class='container'>
+    <div class='row d-flex justify-content-center'>
+        <div class="title text-center">
+            <h1 class='mb-10'>
+                News Details
+            </h1>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-12'>
+            <div class='col-12'>
+                <span>{{newsDetail.news_title | safe}}</span>
+                <div class='col-6'>
+                    <p>{{ newsDetail.news_description | safe }}</p> 
+                    <img src='/media/{{newsDetail.news_image}}' class='img-fluid'/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

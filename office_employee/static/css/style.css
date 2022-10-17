@@ -1,0 +1,28 @@
+.container {
+    margin-top: 30px ;
+    padding: 0;
+    background-color: blanchedalmond;
+}
+
+/* body {
+    background-color: blanchedalmond;
+} */
+
+.card:hover {
+    background-color: rgb(252, 225, 106);
+    /* grid-row: initial; */
+    border-radius: 10px;
+    box-shadow: 10px;
+    /* padding: 5px; */
+    margin: 10px;
+    /* transition-delay: 1s; */
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+}
+
+.card {
+    /* border-radius: 50px; */
+    border-radius: 50%;
+    grid-row: initial;
+    box-shadow: 50px;
+}

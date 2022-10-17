@@ -1,0 +1,60 @@
+{% include 'header.html' %}
+{% load static %}
+
+
+<div class='container'>
+    <div class='row d-flex justify-content-center'>
+        <div class="title text-center">
+            <h1 class='mb-10'>
+               Calculate Marks
+            </h1>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-12'>
+            <form method='POST'>
+                {% csrf_token %}
+                    {% comment %} {{form}} {% endcomment %}
+                <div class='pt-2'>
+                    <label>Subject 1</label>
+                    <input type='text' name='sub1' class='form-control'/>
+                </div><br>
+                <div class='pt-2'>
+                    <label>Subject 2</label>
+                    <input type='text' name='sub2' class='form-control'/>
+                </div><br>
+                <div class='pt-2'>
+                    <label>Subject 3</label>
+                    <input type='text' name='sub3' class='form-control'/>
+                </div><br>
+                <div class='pt-2'>
+                    <label>Subject 4</label>
+                    <input type='text' name='sub4' class='form-control'/>
+                </div><br>
+                <div class='pt-2'>
+                    <label>Subject 5</label>
+                    <input type='text' name='sub5' class='form-control'/>
+                </div><br>
+                <div class='pt-2'>
+                    <button type='submit'>Calculate</button>
+                    {% comment %} <input name="submit" id="" class="btn btn-primary btn-center" type="button" value="submit"/> {% endcomment %}
+                </div><br><br>
+                Result
+                <div class='pt-2'>
+                    <label>Total</label>
+                    <input type='text' value='{{total}}' class='form-control'/>
+                </div><br>
+                <div class='pt-2'>
+                    <label>percentage</label>
+                    <input type='text' value='{{per}}' class='form-control'/>
+                </div><br>
+                <div class='pt-2'>
+                    <label>Division</label>
+                    <input type='text' value='{{div}}' class='form-control'/>
+                </div><br>
+            </form>
+        </div>
+    </div>
+</div>
+
+  {% include 'footer.html' %}

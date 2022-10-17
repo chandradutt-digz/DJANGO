@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>enquire Page</title>
+        <link rel="stylesheet" href="/static/css/style.css"/>
+        <!-- Awsome Font Link -->
+        <script src="https://kit.fontawesome.com/085a2010e9.js" crossorigin="anonymous"></script>
+        <!--    JS script-->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"/>
+        <!-- Bootstrap Font Icon CSS -->
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+              rel="stylesheet"
+              integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+              crossorigin="anonymous">
+    </head>
+    {% include 'header.html' %}
+{% load static %}
+
+
+<div class='container'>
+    <div class='row d-flex justify-content-center'>
+        <div class="title text-center">
+            <h1 class='mb-10'>
+                Enquire Form
+            </h1>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-12'>
+            <form method='POST' action="{% url 'enquire' %}">
+                {% csrf_token %}
+                    {{form}}
+                <div class='pt-2'>
+                    <label>Name</label>
+                    <input type='text' name='name' class='form-control'/>
+                </div>
+                <div class='pt-2'>
+                    <label>Email</label>
+                    <input type='text' name='email' class='form-control'/>
+                </div>
+                <div class='pt-2'>
+                    <label>Mobile</label>
+                    <input type='text' name='mobile' class='form-control'/>
+                </div>
+                <div class='pt-2'>
+                    <label>Address</label>
+                    <input type='text' name='address' class='form-control'/>
+                </div>
+                {% comment %} <div class='pt-2'>
+                    <label>Your Query</label>
+                    <input type='text' name='query' class='form-control'/>
+                </div> {% endcomment %}
+                <div>
+                    <button class='btn btn-primary' type='submit'>Save</button>
+                    {% comment %} <input name="submit" id="" class="btn btn-primary btn-center" type="button" value="submit"/> {% endcomment %}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+  {% include 'footer.html' %}
+</html>
